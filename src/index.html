@@ -16,9 +16,46 @@
 <link href="css/aos.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="styles/main.css" rel="stylesheet">
+
+<style>
+canvas {
+	display: block;
+	vertical-align: bottom;
+} /* ---- particles.js container ---- */
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #135500;
+	background-image: url("images/sky.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:;
+	z-index:1;
+} /* ---- stats.js ---- */
+.count-particles {
+	background: #000022;
+	position: absolute;
+	top: 48px;
+	left: 0;
+	width: 80px;
+	color: #13E8E9;
+	font-size: .8em;
+	text-align: left;
+	text-indent: 4px;
+	line-height: 14px;
+	padding-bottom: 2px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+.js-count-particles {
+	font-size: 1.1em;
+}
+</style>
+
 <script
 	src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 </head>
 <body id="top">
 	<header>
@@ -38,6 +75,7 @@
 								class="navbar-toggler-bar bar3"></span>
 						</button>
 					</div>
+
 					<div class="collapse navbar-collapse justify-content-end"
 						id="navigation">
 						<ul class="navbar-nav">
@@ -62,8 +100,8 @@
 			<div class="profile-page">
 				<div class="wrapper">
 					<div class="page-header page-header-small" filter-color="green">
-						<div class="page-header-image" data-parallax="true"
-							style="background-image: url('images/riverhouse.jpg');"></div>
+						<div id="particles-js"></div>
+						<div class="page-header-image" data-parallax="true"></div>
 						<div class="container">
 							<div class="content-center">
 								<div class="cc-profile-image">
@@ -667,7 +705,7 @@
 									<div class="h5">HIGH SCHOOL : CLASS X</div>
 									<p class="category">
 										DAV Public School <br>Board : CBSE<br>Marks Obtained
-										: 88.60% 
+										: 88.60%
 									</p>
 								</div>
 							</div>
@@ -724,9 +762,9 @@
     </div>
   </div>
 </div> -->
+
 			<div class="section" id="contact">
-				<div class="cc-contact-information"
-					style="background-image: url('images/staticmap.png');">
+				<div class="cc-contact-information">
 					<div class="container">
 						<div class="cc-contact">
 							<div class="row">
@@ -813,6 +851,7 @@
 			</div>
 		</div>
 	</div>
+
 	<footer class="footer">
 		<div class="container text-center">
 			<a class="cc-facebook btn btn-link"
@@ -834,11 +873,143 @@
 			</p>
 		</div>
 	</footer>
+
 	<script src="js/core/jquery.3.2.1.min.js"></script>
 	<script src="js/core/popper.min.js"></script>
 	<script src="js/core/bootstrap.min.js"></script>
 	<script src="js/now-ui-kit.js?v=1.1.0"></script>
 	<script src="js/aos.js"></script>
 	<script src="scripts/main.js"></script>
+	<script>
+		particlesJS("particles-js", {
+			"particles" : {
+				"number" : {
+					"value" : 142,
+					"density" : {
+						"enable" : true,
+						"value_area" : 789.1476416322727
+					}
+				},
+				"color" : {
+					"value" : "#ffffff"
+				},
+				"shape" : {
+					"type" : "circle",
+					"stroke" : {
+						"width" : 0,
+						"color" : "#000000"
+					},
+					"polygon" : {
+						"nb_sides" : 5
+					},
+					"image" : {
+						"src" : "img/github.svg",
+						"width" : 100,
+						"height" : 100
+					}
+				},
+				"opacity" : {
+					"value" : 0.625330703737554,
+					"random" : false,
+					"anim" : {
+						"enable" : false,
+						"speed" : 4.304009225197129,
+						"opacity_min" : 0.2679854800594439,
+						"sync" : false
+					}
+				},
+				"size" : {
+					"value" : 4.008530152163807,
+					"random" : true,
+					"anim" : {
+						"enable" : false,
+						"speed" : 43.852169464272635,
+						"size_min" : 9.74492654761614,
+						"sync" : false
+					}
+				},
+				"line_linked" : {
+					"enable" : true,
+					"distance" : 150,
+					"color" : "#ffffff",
+					"opacity" : 0.4,
+					"width" : 1
+				},
+				"move" : {
+					"enable" : true,
+					"speed" : 6,
+					"direction" : "none",
+					"random" : false,
+					"straight" : false,
+					"out_mode" : "out",
+					"bounce" : false,
+					"attract" : {
+						"enable" : false,
+						"rotateX" : 600,
+						"rotateY" : 1200
+					}
+				}
+			},
+			"interactivity" : {
+				"detect_on" : "canvas",
+				"events" : {
+					"onhover" : {
+						"enable" : true,
+						"mode" : "repulse"
+					},
+					"onclick" : {
+						"enable" : true,
+						"mode" : "push"
+					},
+					"resize" : true
+				},
+				"modes" : {
+					"grab" : {
+						"distance" : 400,
+						"line_linked" : {
+							"opacity" : 1
+						}
+					},
+					"bubble" : {
+						"distance" : 400,
+						"size" : 40,
+						"duration" : 2,
+						"opacity" : 8,
+						"speed" : 3
+					},
+					"repulse" : {
+						"distance" : 121.81158184520177,
+						"duration" : 0.4
+					},
+					"push" : {
+						"particles_nb" : 4
+					},
+					"remove" : {
+						"particles_nb" : 2
+					}
+				}
+			},
+			"retina_detect" : true
+		});
+		var count_particles, stats, update;
+		stats = new Stats;
+		stats.setMode(0);
+		stats.domElement.style.position = 'absolute';
+		stats.domElement.style.left = '0px';
+		stats.domElement.style.top = '0px';
+		document.body.appendChild(stats.domElement);
+		count_particles = document.querySelector('.js-count-particles');
+		update = function() {
+			stats.begin();
+			stats.end();
+			if (window.pJSDom[0].pJS.particles
+					&& window.pJSDom[0].pJS.particles.array) {
+				count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+			}
+			requestAnimationFrame(update);
+		};
+		requestAnimationFrame(update);
+		;
+	</script>
 </body>
 </html>
